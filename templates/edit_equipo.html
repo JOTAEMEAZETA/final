@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Editar Equipo
+{% endblock %}
+
+{% block main %}
+
+<form action="/editar_equipo" method="post" enctype="multipart/form-data">
+    <div class="mb-3 d-none">
+        <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="id"
+            type="text" value="{{equipo.id}}" required>
+    </div>
+    <div class="mb-3">
+        <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="area_id" type="text" value="{{equipo.area_id}}" required>
+    </div>
+    <div class="mb-3">
+        <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="nombre"  type="text" value="{{equipo.nombre}}" required>
+    </div>
+    <div class="mb-3">
+        <input class="form-control mx-auto w-auto" name="tag"  type="text" value="{{equipo.tag}}" required>
+    </div>
+    <div class="mb-3">
+        <input class="form-control mx-auto w-auto" name="tipo_equipo" value="{{equipo.tipo_equipo}}" type="text">
+    </div>
+    <div class="mb-3">
+        <input class="form-control mx-auto w-auto" name="marca" value="{{equipo.marca}}" type="text">
+    </div>
+    <div class="mb-3">
+        <input class="form-control mx-auto w-auto" name="modelo" value="{{equipo.modelo}}" type="text">
+    </div>
+    <div class="mb-3">
+        <input class="form-control mx-auto w-auto" name="descripcion" value="{{equipo.descripcion}}" type="text">
+    </div>
+    <div class="mb-3 d-none">
+        <input class="form-control mx-auto w-auto" name="archivo_jpg"  type="text" value="{{equipo.archivo_jpg}}">
+    </div>
+    <div class="mb-3 d-none">
+        <input class="form-control mx-auto w-auto" name="archivo_pdf"  type="text" value="{{equipo.archivo_pdf}}">
+    </div>
+    <div class="mb-3">
+        <input class="form-control mx-auto w-auto" name="archivo_jpg"  type="file" value="{{equipo.archivo_jpg}}">
+    </div>
+    <div class="mb-3">
+        <input class="form-control mx-auto w-auto" name="archivo_pdf"  type="file" value="{{equipo.archivo_pdf}}">
+    </div>
+    <div class="mb-3">
+        <input class="form-control mx-auto w-auto" name="mantenimiento1" value="{{equipo.fecha_mantenimiento_1}}" type="date">
+    </div>
+    <div class="mb-3">
+        <input class="form-control mx-auto w-auto" name="mantenimiento2" value="{{equipo.fecha_mantenimiento_2}}" type="date">
+    </div>
+    <div class="mb-3">
+        <input class="form-control mx-auto w-auto" name="mantenimiento" value="{{equipo.mantenimiento}}" type="text">
+    </div>
+    <div class="mb-3">
+        <input class="form-control mx-auto w-auto" name="proveedor" value="{{equipo.proveedor}}" type="text">
+    </div>
+    <button class="btn btn-primary" type="submit">Editar</button>
+</form>
+<a href="/areas?id={{ equipo.area_id }}"><button class="btn btn-primary">Cancelar</button></a>
+
+{% endblock %}

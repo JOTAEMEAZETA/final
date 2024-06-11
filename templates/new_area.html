@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Área Nueva
+{% endblock %}
+
+{% block main %}
+    <form action="/new_area" method="post">
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="nombre" placeholder="Nombre" type="text" required>
+        </div>
+        <div class="mb-3">
+            <input class="form-control mx-auto w-auto" name="tag" placeholder="Tag" type="text" required>
+        </div>
+        <div class="mb-3">
+            <input class="form-control mx-auto w-auto" name="ubicacion" placeholder="Ubicación" type="text">
+        </div>
+        <div class="mb-3">
+            <input class="form-control mx-auto w-auto" name="descripcion" placeholder="Descripción" type="text">
+        </div>
+        <button class="btn btn-primary" type="submit">Crear</button>
+    </form>
+    <a href="/"><button class="btn btn-primary">Cancelar</button></a>
+{% endblock %}

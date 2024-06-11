@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    EQUIPOS
+{% endblock %}
+
+{% block main %}
+
+    <a href="/new_equipo?id={{id_area}}"><button class="btn btn-primary ">Nuevo</button></a>
+
+   <table class="">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Tag</th>
+            <th>Tipo</th>
+            <th>Marca</th>
+            <th>Descripción</th>
+            <th>jpg</th>
+            <th>PDF</th>
+            <th>Fecha Mantenimiento (1)</th>
+            <th>Fecha Mantenimiento (2)</th>
+            <th>Mantenimiento</th>
+            <th>Proveedor</th>
+            <th>EDITAR</th>
+            <th>ELIMINAR</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for row in equipos %}
+            <tr>
+                <td><a href="/equipos?id={{ row.id }}">{{ row.nombre }}</a></td>
+                <td>{{ row.tag }}</td>
+                <td>{{ row.tipo_equipo }}</td>
+                <td>{{ row.marca }}</td>
+                <td>{{ row.descripcion }}</td>
+                <td><a href="/uploads/{{ row.archivo_jpg }}">JPG</a></td>
+                <td><a href="/uploads/{{ row.archivo_pdf }}">PDF</a></td>
+                <td>{{ row.fecha_mantenimiento_1 }}</td>
+                <td>{{ row.fecha_mantenimiento_2 }}</td>
+                <td>{{ row.mantenimiento }}</td>
+                <td>{{ row.proveedor }}</td>
+
+                <td class="">
+                    <a href="/editar_equipo?id={{ row.id }}"><button class="btn btn-primary " type="submit">Editar</button></a>     
+                </td>
+
+                <td class="">
+                    <a href="/borrar_equipo?id={{ row.id }}"><button class="btn btn-primary " type="submit">Borrar</button></a>
+                </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+   </table>
+{% endblock %}

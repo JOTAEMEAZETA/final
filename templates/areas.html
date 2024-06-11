@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    AREAS
+{% endblock %}
+
+{% block main %}
+
+    <a href="/new_area"><button class="btn btn-primary ">Nuevo</button></a>
+
+   <table class="">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Tag</th>
+            <th>Ubicación</th>
+            <th>Descripción</th>
+            <th>EDITAR</th>
+            <th>ELIMINAR</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for row in areas %}
+            <tr>
+                <td><a href="/areas?id={{ row.id }}">{{ row.nombre }}</a></td>
+                <td>{{ row.tag }}</td>
+                <td>{{ row.ubicacion }}</td>
+                <td>{{ row.descripcion }}</td>
+
+                <td class="">
+                    <a href="/editar_area?id={{ row.id }}"><button class="btn btn-primary " type="submit">Editar</button></a>     
+                </td>
+
+                <td class="">
+                    <a href="/borrar_area?id={{ row.id }}"><button class="btn btn-primary " type="submit">Borrar</button></a>
+                </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+   </table>
+{% endblock %}

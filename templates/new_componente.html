@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Componente Nuevo
+{% endblock %}
+
+{% block main %}
+<form action="/new_componente" method="post" enctype="multipart/form-data">
+    <div class="mb-3 d-none">
+        <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="equipo_id" type="text"
+            value="{{equipo_id}}">
+    </div>
+    <div class="mb-3">
+        <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="nombre" placeholder="Nombre"
+            type="text" required>
+    </div>
+    <div class="mb-3">
+        <input class="form-control mx-auto w-auto" name="tag" placeholder="Tag" type="text" required>
+    </div>
+    <div class="mb-3">
+        <input class="form-control mx-auto w-auto" name="tipo_componente" placeholder="Tipo de Componente" type="text">
+    </div>
+    <div class="mb-3">
+        <input class="form-control mx-auto w-auto" name="marca" placeholder="Marca" type="text">
+    </div>
+    <div class="mb-3">
+        <input class="form-control mx-auto w-auto" name="modelo" placeholder="Modelo" type="text">
+    </div>
+    <div class="mb-3">
+        <input class="form-control mx-auto w-auto" name="descripcion" placeholder="Descripción" type="text">
+    </div>
+    <div class="mb-3">
+        <input class="form-control mx-auto w-auto" name="archivo_jpg" type="file">
+    </div>
+    <div class="mb-3">
+        <input class="form-control mx-auto w-auto" name="archivo_pdf" type="file">
+    </div>
+    <div class="mb-3">
+        <input class="form-control mx-auto w-auto" name="mantenimiento1" placeholder="Fecha Manteniento 1" type="date">
+    </div>
+    <div class="mb-3">
+        <input class="form-control mx-auto w-auto" name="mantenimiento2" placeholder="Fecha Manteniento 2" type="date">
+    </div>
+    <div class="mb-3">
+        <input class="form-control mx-auto w-auto" name="mantenimiento" placeholder="Mantenimiento" type="text">
+    </div>
+    <div class="mb-3">
+        <input class="form-control mx-auto w-auto" name="proveedor" placeholder="Proveedor" type="text">
+    </div>
+
+    <button class="btn btn-primary" type="submit">Crear</button>
+</form>
+<a href="/equipos?id={{ equipo_id }}"><button class="btn btn-primary">Cancelar</button></a>
+{% endblock %}
